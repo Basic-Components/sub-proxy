@@ -1,5 +1,4 @@
-FROM hsz1273327/sub-proxy:Base-v0
-ADD . /app/src/github.com/Basic-Components/sub-proxy
+FROM hsz1273327/golang-zmq
 ENV GOPATH="/app"
-WORKDIR /app/src/github.com/Basic-Components/sub-proxy
-RUN go build
+RUN go get github.com/pebbe/zmq4
+RUN go get github.com/sirupsen/logrus
